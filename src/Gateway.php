@@ -6,6 +6,7 @@ use Omnipay\PayPal\RestGateway;
 use Omnipay\PayPalPlus\Message\IframeRequest;
 use Omnipay\PayPalPlus\Message\IframeResponse;
 use Omnipay\PayPalPlus\Message\RestPurchaseRequest;
+use Omnipay\PayPalPlus\Message\RestUpdatePaymentRequest;
 
 /**
  * PayPal Plus Gateway.
@@ -20,6 +21,11 @@ class Gateway extends RestGateway
     public function purchase(array $parameters = [])
     {
         return $this->createRequest(RestPurchaseRequest::class, $parameters);
+    }
+
+    public function updatePayment(array $parameters = [])
+    {
+        return $this->createRequest(RestUpdatePaymentRequest::class, $parameters);
     }
 
     /**

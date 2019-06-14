@@ -1,5 +1,5 @@
 {
-    "name": "mikoweb/omnipay-paypal-plus",
+    "name": "joulbex/omnipay-paypal-plus",
     "type": "library",
     "description": "PayPal Plus gateway for Omnipay payment processing library",
     "keywords": [
@@ -7,7 +7,7 @@
         "omnipay",
         "paypal plus"
     ],
-    "homepage": "https://github.com/mikoweb/omnipay-paypal-plus",
+    "homepage": "https://github.com/joulbex/omnipay-paypal-plus",
     "license": "MIT",
     "authors": [
         {
