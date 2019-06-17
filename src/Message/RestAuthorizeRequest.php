@@ -235,7 +235,8 @@ class RestAuthorizeRequest extends AbstractRestRequest
                     ),
                 )
             ),
-            'experience_profile_id' => $this->getExperienceProfileId()
+            'experience_profile_id' => $this->getExperienceProfileId(),
+            'input_fields' => array()
         );
 
         $items = $this->getItems();
@@ -300,6 +301,13 @@ class RestAuthorizeRequest extends AbstractRestRequest
             $data['redirect_urls'] = array(
                 'return_url' => $this->getReturnUrl(),
                 'cancel_url' => $this->getCancelUrl(),
+            );
+        }
+
+        if (!$this->getNoShipping()){
+            $data['input_fields'] = array(
+                'no_shipping' => 1,
+                'address_override' => 0
             );
         }
 
