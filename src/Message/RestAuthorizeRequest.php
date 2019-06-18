@@ -335,6 +335,16 @@ class RestAuthorizeRequest extends AbstractRestRequest
         return $this->setParameter('experienceProfileId', $value);
     }
 
+    public function getNoShipping()
+    {
+        return $this->getParameter('noShipping');
+    }
+
+    public function setNoShipping($value)
+    {
+        return $this->setParameter('noShipping', $value);
+    }
+
     /**
      * Get transaction description.
      *
