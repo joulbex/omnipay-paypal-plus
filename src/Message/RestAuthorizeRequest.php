@@ -235,8 +235,7 @@ class RestAuthorizeRequest extends AbstractRestRequest
                     ),
                 )
             ),
-            'experience_profile_id' => $this->getExperienceProfileId(),
-            'input_fields' => array()
+            'experience_profile_id' => $this->getExperienceProfileId()
         );
 
         $items = $this->getItems();
@@ -304,13 +303,6 @@ class RestAuthorizeRequest extends AbstractRestRequest
             );
         }
 
-        if (!$this->getNoShipping()){
-            $data['input_fields'] = array(
-                'no_shipping' => 1,
-                'address_override' => 0
-            );
-        }
-
         return $data;
     }
 
@@ -335,14 +327,14 @@ class RestAuthorizeRequest extends AbstractRestRequest
         return $this->setParameter('experienceProfileId', $value);
     }
 
-    public function getNoShipping()
+    public function getShippingPreference()
     {
-        return $this->getParameter('noShipping');
+        return $this->getParameter('shippingPreference');
     }
 
-    public function setNoShipping($value)
+    public function setShippingPreference($value)
     {
-        return $this->setParameter('noShipping', $value);
+        return $this->setParameter('shippingPreference', $value);
     }
 
     /**

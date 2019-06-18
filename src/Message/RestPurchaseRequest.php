@@ -228,6 +228,7 @@ class RestPurchaseRequest extends RestAuthorizeRequest
     {
         $data = parent::getData();
         $data['intent'] = 'sale';
+        $data['application_context']['shipping_preference'] = $this->getShippingPreference();
 
         if (isset($data['transactions']) && !empty($this->getParameter('notifyUrl'))) {
             foreach ($data['transactions'] as &$transaction) {
