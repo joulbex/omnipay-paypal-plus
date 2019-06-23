@@ -16,7 +16,7 @@ class RestAuthorizeResponse extends RestResponse  implements RedirectResponseInt
 {
     public function isSuccessful()
     {
-        return empty($this->data['error']) && $this->getCode() == 201;
+        return empty($this->data['error']) && ($this->getCode() == 200 || $this->getCode() == 201);
     }
 
     public function isRedirect()
